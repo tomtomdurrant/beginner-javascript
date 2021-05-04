@@ -9,6 +9,38 @@
 </head>
 
 <body>
+  <script>
+    // function outer() {
+    //   const outerVar = "Outer";
+    //   function inner() {
+    //     const innerVar = "Inner";
+    //     console.log(innerVar);
+    //     console.log(outerVar);
+    //   }
+    //   return inner; 
+    // }
+
+    // const innerFn = outer();
+    function createGreeting(greeting) {
+      const myGreeting = greeting.toUpperCase();
+      return function (name) {
+        return `${myGreeting} ${name}`
+      }
+    }
+    const hiGreeting = createGreeting('hi');
+    console.log(hiGreeting('Tom'));
+
+    function createGame(gameName) {
+      let score = 0;
+      return function win() {
+        score++;
+        return `Your name ${gameName} score is ${score}`
+      }
+    }
+    const hockeyGame = createGame('Hockey');
+    
+    
+  </script>
 
 </body>
 
